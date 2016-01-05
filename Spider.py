@@ -10,16 +10,18 @@ page_count = 3
 
 
 class Spider(object):
-    def __init__(self, thread_name, city_name):
+    def __init__(self, thread_name, city_name, category, keyword):
         self.city_name = city_name
         self.thread_name = thread_name
+	self.category = category
+	self.keyword = keyword
 
     def getData(self):
         for cur_page in range(page_count):
             num = cur_page + 1
-            url = 'http://%s.58.com/kongtiao/pn%s/' % (self.city_name, num)
+            url = 'http://%s.58.com/%s/pn%s/' % (self.city_name, self.category, num)
             data = {
-                'key': '空调维修'
+                'key': self.keyword
             }
             url_values = urllib.urlencode(data)
             full_url = url + '?' + url_values
@@ -51,5 +53,5 @@ class Spider(object):
 
 
 if __name__ == '__main__':
-    spider = Spider('test', 'wh')
+    spider = Spider('老肖的58助手', 'wh', 'kongtiao', '维修')
     spider.getData()
