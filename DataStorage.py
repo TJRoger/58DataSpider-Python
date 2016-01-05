@@ -14,7 +14,7 @@ class StoreToFile(object):
         #file_handler = open('D://DATA.txt', 'a')
 	#file_handler = open('/Users/Roger/developer/58/58/DATA.html','a')
 	file_handler = open(path+'/58data/DATA.html', 'a')
-        line = '<div>%s\t%s\t%s\t%s\n%s</div>\n' % (city, company, contact_name, phone, description)
+        line = '<div>%s\t%s\t%s\t%s<br/>%s</div><br/>' % (city, company, contact_name, phone, description)
         file_handler.write(line)
         file_handler.close()
 
