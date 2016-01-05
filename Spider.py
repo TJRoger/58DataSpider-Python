@@ -17,9 +17,9 @@ class Spider(object):
     def getData(self):
         for cur_page in range(page_count):
             num = cur_page + 1
-            url = 'http://%s.58.com/shejipeixun/pn%s/' % (self.city_name, num)
+            url = 'http://%s.58.com/kongtiao/pn%s/' % (self.city_name, num)
             data = {
-                'key': '设计培训'
+                'key': '空调维修'
             }
             url_values = urllib.urlencode(data)
             full_url = url + '?' + url_values
@@ -43,13 +43,13 @@ class Spider(object):
                     detail_html = detail_response.read()
                     data_storage = StoreToFile()
                     detail = Detail(detail_html)
-                    city, company_name, teacher_name, phone_name = detail.get_company_into()
+                    city, company, contact_name, phone, description = detail.get_company_info()
                     if city is None:
                         data_storage.storeFailtureURL(detail_url)
 
-                    data_storage.storeData(city, company_name, teacher_name, phone_name)
+                    data_storage.storeData(city, company, contact_name, phone, description)
 
 
 if __name__ == '__main__':
-    spider = Spider('test', 'sh')
+    spider = Spider('test', 'wh')
     spider.getData()
