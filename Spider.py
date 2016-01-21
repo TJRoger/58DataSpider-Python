@@ -53,5 +53,5 @@ class Spider(object):
 
 
 if __name__ == '__main__':
-    spider = Spider('老肖的58助手', 'wh', 'kongtiao', '维修')
+    spider = Spider('小小龙的58助手', 'wh', 'kongtiao', '维修')
     spider.getData()
