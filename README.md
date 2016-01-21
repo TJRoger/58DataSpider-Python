@@ -25,8 +25,8 @@ brew link libxslt --force
 * 获取搜索分类，在58搜索你需要的关键词，然后截取58.com/xxx/中的xxx(分类信息)替换到文件最下方的Spider得构造函数中第三个参数  
 如 
 ```
-spider = Spider('老肖的58助手', 'wh', 'kongtiao', '空调维修')
-spider = Spider('老肖的58助手', 'sh', 'shejipeixun', '设计培训')
+spider = Spider('小小龙的58助手', 'wh', 'kongtiao', '空调维修')
+spider = Spider('小小龙的58助手', 'sh', 'shejipeixun', '设计培训')
 spider.getData()
 ```
 在当前目录运行`python Spider.py`,运行完毕数据保存在58data/DATA.html中，数据填入方式为附加，所以每次运行过后请另行保存并删除或清空该文件
